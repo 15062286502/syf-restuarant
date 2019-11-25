@@ -42,7 +42,7 @@
     </view>
   </view>
   <view class='order-info'>
-    <!-- 本应动态请求，在此写死 -->
+    <!-- 动态请求 -->
     <view class='order-info-title'>订单信息</view>
     <view class='order-info-title flex-display' >订单号码
       <view style='color:black;margin-left:10px'>{{identifier}}</view>
