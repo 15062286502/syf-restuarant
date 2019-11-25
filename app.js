@@ -35,5 +35,14 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  setLoginState: function(e){
+    wx.setStorageSync('openId', e);
+  },
+  bitphone: function () {
+    wx.makePhoneCall({
+      phoneNumber: '1340000'
+    })
   }
+
 })

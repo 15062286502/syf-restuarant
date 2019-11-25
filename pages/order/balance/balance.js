@@ -9,7 +9,8 @@ Page({
     sumMonney: 0,
     cutMonney: 0,
     cupNumber:0,
-    remarks: ""
+    remarks: "",
+    openId: ""
   },
 
   /**
@@ -24,11 +25,13 @@ Page({
       sumMonney: wx.getStorageSync('sumMonney'),
       cutMonney: wx.getStorageSync('sumMonney')>19?3:0,
       cupNumber: wx.getStorageSync('cupNumber'),
+      openId: wx.getStorageSync('openId')
     })
     
   },
   gopay:function(){
     var that =this;
+    
     wx.request({
       url: 'http://localhost:8081/vx/getOrder',
       method: 'GET',
@@ -37,13 +40,15 @@ Page({
         'sumMoney': that.data.sumMonney,
         'cutMoney': that.data.cutMonney,
         'cupNumber': that.data.cupNumber,
-        'remarks': that.data.remarks
+        'remarks': that.data.remarks,
+        'openId': that.data.openId
       },
       header: {
         'Accept': 'application/json'
       },
       success: function (res) {
         console.log(res.data)
+        console.log(that.data.openId);
         wx.navigateTo({
           url: '../detail/detail?identifier=' + res.data.identifier + '&time=' + res.data.time +'&mealNumber=' + res.data.mealNumber
         })

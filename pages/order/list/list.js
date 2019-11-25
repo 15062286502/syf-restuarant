@@ -1,4 +1,5 @@
 // pages/order/list/list.js
+const app = getApp()
 Page({
 
   /**
@@ -13,10 +14,10 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'http://localhost:8081/vx',
+      url: 'http://localhost:8081/vx/takeInOrder',
       method: 'GET',
       data: {
-    
+        "openId": wx.getStorageSync('openId')
       },
       header: {
         'Accept': 'application/json'
