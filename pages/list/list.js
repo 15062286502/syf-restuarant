@@ -105,6 +105,7 @@ Page({
       "detail": a.size[a.sizeIndex] + "+" + a.sugar[a.sugarIndex] + "+" + a.tem[a.temIndex],
       "number": 1,
       "sum": parseInt(a.listData[a.currentType].foods[a.currentIndex].price),
+      "img": a.listData[a.currentType].foods[a.currentIndex].imgUrl
     }
     var sumMonney = a.sumMonney + parseInt(a.listData[a.currentType].foods[a.currentIndex].price);
     var cartList = this.data.cartList;
