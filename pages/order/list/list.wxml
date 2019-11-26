@@ -19,11 +19,14 @@
 
 <view wx:if="{{tabIndex==0&&takeInList.length!=0}}" class='order-info' wx:for="{{takeInList}}" wx:key="unique">
     
-    <view class='order-info-title'>订单时间：{{item.orderEntity.createTime}}</view>
+    <view class='order-info-title'>订单时间：{{item.orderTime}}</view>
     <view class='cart-list-box' >
       <view class='list-info'>
         <view>{{item.orderName}}</view>
-        <view class='list-info-size'>{{item.orderDetail}}</view>
+        <view class='list-info-size'>{{item.orderDesc}}</view>
+         <view class='list-image-box'>
+          <image class="list-image" mode="widthFix" src='{{item.orderImg}}'></image>
+        </view>
       </view>
       <view style='width:50%;padding:10px;'>
         <view style='float:right'>

@@ -1,4 +1,5 @@
 /* pages/order/list/list.wxss */
+@import "../../list/list.wxss";
 .active-color{
   background: #FF9C35;
 }
