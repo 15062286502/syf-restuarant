@@ -32,8 +32,10 @@
         <view style='float:right'>
           <view style='color:#A3A3A3'>共 {{item.orderEntity.cupNumber}}件</view>
           <view>¥ {{item.orderEntity.sumMoney}}.00</view>
+              <view class="state" style="color:{{item.orderEntity.state==0?'green':'red'}}">{{item.orderEntity.state==0?'制作中':'已完成'}}</view>
         </view>
       </view>
+       
     </view>
   
    

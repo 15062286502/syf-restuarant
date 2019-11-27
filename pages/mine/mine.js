@@ -30,23 +30,6 @@ Page({
                 avatarUrl: userInfo.avatarUrl,
                 loginButton: false
               })
-
-              wx.login({
-                success: res => {
-                  // 获取到用户的 code 之后：res.code
-                  // 可以传给后台，再经过解析获取用户的 openid
-                  // 或者可以直接使用微信的提供的接口直接获取 openid ，方法如下：
-
-                  wx.request({
-                    // 自行补上自己的 APPID 和 SECRET
-                    url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx1a5373c8189be987&secret=ec51c8de76a4d2c66b735697dcf82e10&js_code=' + res.code + '&grant_type=authorization_code',
-                    success: res => {
-                      // 获取到用户的 openid
-                      wx.setStorageSync('openId', res.data.openid);
-                    }
-                  });
-                }
-              });
             }
           })
 
@@ -54,7 +37,7 @@ Page({
       }
     })
   },
-  bindGetUserInfo: function (e) {
+  bindGetUserInfo: function(e) {
     if (e.detail.userInfo) {
       var that = this;
       that.setData({
@@ -62,27 +45,51 @@ Page({
         avatarUrl: e.detail.userInfo.avatarUrl,
         loginButton: false
       })
-      wx.login({
-        success: res => {
-          // 获取到用户的 code 之后：res.code
-          // 可以传给后台，再经过解析获取用户的 openid
-          // 或者可以直接使用微信的提供的接口直接获取 openid ，方法如下：
+      this.login()
 
-          wx.request({
-            // 自行补上自己的 APPID 和 SECRET
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx1a5373c8189be987&secret=ec51c8de76a4d2c66b735697dcf82e10&js_code=' + res.code + '&grant_type=authorization_code',
-            success: res => {
-              // 获取到用户的 openid
-              app.setLoginState(res.data.openid);
-              
-            }
-          });
-        }
-      });
     }
 
-  }
+  },
 
+  login: function() {
+    wx.login({
+      success: res => {
+        // 获取到用户的 code 之后：res.code
+        // 可以传给后台，再经过解析获取用户的 openid
+        // 或者可以直接使用微信的提供的接口直接获取 openid ，方法如下：
+
+        wx.request({
+          // 自行补上自己的 APPID 和 SECRET
+          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx1a5373c8189be987&secret=ec51c8de76a4d2c66b735697dcf82e10&js_code=' + res.code + '&grant_type=authorization_code',
+          success: res => {
+            // 获取到用户的 openid
+            app.setLoginState(res.data.openid)
+            wx.request({
+              url: 'http://localhost:8081/vx/saveUser',
+              method: 'GET',
+              data: {
+                vxName: this.data.nickName,
+                vxImg: this.data.avatarUrl,
+                openId: res.data.openid
+              },
+              header: {
+                'Accept': 'application/json'
+              },
+              success: function (res) {
+              },
+              fail: function (res) {
+                wx.showToast({
+                  title: '服务器异常',
+                  icon: 'none'
+                })
+              }
+            })
+
+          }
+        });
+      }
+    })
+  }
 
 
 })
