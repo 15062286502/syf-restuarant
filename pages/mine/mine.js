@@ -89,6 +89,11 @@ Page({
         });
       }
     })
+  },
+  getAddress:function(){
+    wx.navigateTo({
+      url: '../address/address'
+    })
   }
 
 
