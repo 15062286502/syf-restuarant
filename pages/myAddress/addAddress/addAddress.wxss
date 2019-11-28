@@ -1,0 +1,28 @@
+/* pages/myAddress/addAddress/addAddress.wxss */
+.addPage{
+  display: flex;
+  flex-direction: column;
+}
+.detail, .number,.person,.phone{
+ display: flex;
+ margin-top: 40rpx;
+ border-bottom: 1px solid #808080;
+}
+text{
+  margin-left: 50rpx;
+  margin-bottom: 20rpx;
+}
+.sex{
+  margin-top: 40rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+button{
+  width: 100%;
+  margin-top: 80rpx;
+  background: orange;
+}
+input{
+  width: 70%;
+   margin-bottom: 20rpx;
+}

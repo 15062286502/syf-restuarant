@@ -1,0 +1,4 @@
+<!--pages/myAddress/myAddress.wxml-->
+ <view class='btn-block' bindtap='addAddress'>
+      <view class="btn_op1">新增地址</view>
+    </view>
