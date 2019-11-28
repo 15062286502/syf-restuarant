@@ -7,8 +7,8 @@
     "pages/mine/mine",
     "pages/order/list/list",
     "pages/order/detail/detail",
-    "pages/address/address",
-    "pages/address/addAddress/addAddress"
+    "pages/myAddress/myAddress",
+    "pages/myAddress/addAddress/addAddress"
   ],
   "window": {
     "backgroundTextStyle": "light",

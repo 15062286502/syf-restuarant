@@ -92,7 +92,7 @@ Page({
   },
   getAddress:function(){
     wx.navigateTo({
-      url: '../address/address'
+      url: '../myAddress/myAddress'
     })
   }
 
