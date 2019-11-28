@@ -1,32 +1,33 @@
 <!--pages/myAddress/addAddress/addAddress.wxml-->
 <view class="addPage">
-
+<form  bindsubmit='formSubmit'>
   <view class="detail">
     <text>详细地址:</text>
-    <input placeholder="请输入详细地址" />
+    <input placeholder="请输入详细地址" name="detail" />
   </view>
 
   <view class="number">
     <text decode="{{true}}">门牌号:&ensp;&ensp;</text>
-    <input placeholder="请输入门牌号" />
+    <input placeholder="请输入门牌号" name="number"/>
   </view>
 
   <view class="person">
     <text decode="{{true}}">联系人:&ensp;&ensp;</text>
-    <input placeholder="请输入联系人" />
+    <input placeholder="请输入联系人" name="person"/>
   </view>
-  <view class="sex">
-    <radio-group bindchange="sex">
-      <radio value='man' checked>先生</radio>
-      <radio value='woman' >女士</radio>
+  <view class="sex" >
+    <radio-group bindchange="sex" name="sex">
+      <radio value='先生' checked>先生</radio>
+      <radio value='女士' >女士</radio>
     
     </radio-group>
   </view>
 
   <view class="phone">
     <text decode="{{true}}">手机号:&ensp;&ensp;</text>
-    <input placeholder="请输入手机号" />
+    <input placeholder="请输入手机号" name="phone"/>
   </view>
 
-  <button>保存地址</button>
+  <button form-type='submit'>保存地址</button>
+  </form>
 </view>

@@ -1,4 +1,21 @@
 <!--pages/myAddress/myAddress.wxml-->
- <view class='btn-block' bindtap='addAddress'>
-      <view class="btn_op1">新增地址</view>
+<view style="addressView">
+
+  <view class='btn-block' bindtap='addAddress'>
+    <view class="btn_op1">新增地址</view>
+  </view>
+
+  <view class="addrssCard" wx:for="{{addressData[0]}}" wx:key="unique" data-index="{{index}}">
+    <view class="house">
+      <text>{{item.detail}}</text>
+      <text class="text1">{{item.number}}</text>
+       <view class="btn_op2" bindtap='deleteAddress' data-index="{{index}}">删除</view>
     </view>
+
+    <view class="person">
+      <text class="text4">{{item.person}}</text>
+      <text class="text2">{{item.sex}}</text>
+      <text class="text3">{{item.phone}}</text>
+    </view>
+  </view>
+</view>

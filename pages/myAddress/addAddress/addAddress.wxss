@@ -9,7 +9,6 @@
  border-bottom: 1px solid #808080;
 }
 text{
-  margin-left: 50rpx;
   margin-bottom: 20rpx;
 }
 .sex{
@@ -25,4 +24,5 @@ button{
 input{
   width: 70%;
    margin-bottom: 20rpx;
+   margin-left: 50rpx;
 }

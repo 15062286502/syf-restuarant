@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    addressData: []
   },
 
   /**
@@ -26,6 +26,31 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/vx/getAddress',
+      method: 'GET',
+      data: {
+        openId:wx.getStorageSync("openId")
+      },
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function (res) {
+       that.setData({
+         addressData: res.data
+       })
+       console.log(that.data.addressData)
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '服务器异常',
+          icon: 'none'
+        })
+      }
+    })
+
+
 
   },
 
@@ -66,6 +91,30 @@ Page({
   addAddress: function(){
     wx.navigateTo({
       url: './addAddress/addAddress'
+    })
+  },
+  deleteAddress: function(e){
+    var index = e.currentTarget.dataset.index;
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/vx/deleteAddress',
+      method: 'GET',
+      data: {
+        openId: wx.getStorageSync("openId"),
+        index: index
+      },
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function (res) {
+        that.onShow();
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '服务器异常',
+          icon: 'none'
+        })
+      }
     })
   }
 })
