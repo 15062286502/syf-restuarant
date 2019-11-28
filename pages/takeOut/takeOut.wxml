@@ -1,4 +1,4 @@
 <!--pages/takeOut/takeOut.wxml-->
 <import src="../template/t_list.wxml" />
 <template is="list" data="{{listData,activeIndex,toView,scrollTop,screenWidth,showModalStatus,currentType,currentIndex,sizeIndex,sugarIndex,temIndex,sugar,tem,size,cartList,sumMonney,cupNumber,showCart,loading}}"></template><!--传入参数，必须是对象-->
-<template is="discount" data="{{sumMonney,loading}}"></template>
+

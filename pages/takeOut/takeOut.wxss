@@ -1,0 +1,2 @@
+/* pages/takeOut/takeOut.wxss */
+ @import "../template/t_list.wxss"

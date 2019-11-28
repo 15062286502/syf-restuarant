@@ -23,4 +23,9 @@ Page({
       url: '../list/list'
     })
   },
+  goTakeOut: function(){
+    wx.navigateTo({
+      url: '../takeOut/takeOut'
+    })
+  }
 })
