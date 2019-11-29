@@ -1,0 +1,2 @@
+/* pages/takeOut/address/address.wxss */
+@import "../../myAddress/myAddress.wxss"

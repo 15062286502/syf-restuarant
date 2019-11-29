@@ -174,7 +174,7 @@ Page({
       wx.setStorageSync('sumMonney', this.data.sumMonney);
       wx.setStorageSync('cupNumber', this.data.cupNumber);
       wx.navigateTo({
-        url: '../order/balance/balance'
+        url: './balanceOut/balanceOut'
       })
     }
   },

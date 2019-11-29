@@ -1,0 +1,2 @@
+/* pages/takeOut/balanceOut/balanceOut.wxss */
+ @import "../../order/balance/balance.wxss"

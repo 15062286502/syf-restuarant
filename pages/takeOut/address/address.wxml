@@ -1,0 +1,17 @@
+<!--pages/myAddress/myAddress.wxml-->
+<view style="addressView">
+
+ 
+  <view class="addrssCard" wx:for="{{addressData[0]}}" wx:key="unique" data-index="{{index}}">
+    <view class="house">
+      <text>{{item.detail}}</text>
+      <text class="text1">{{item.number}}</text>
+    </view>
+
+    <view class="person">
+      <text class="text4">{{item.person}}</text>
+      <text class="text2">{{item.sex}}</text>
+      <text class="text3">{{item.phone}}</text>
+    </view>
+  </view>
+</view>
