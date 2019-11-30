@@ -1,5 +1,6 @@
 // pages/myAddress/myAddress.js
-
+const app = getApp()
+const api = app.globalData.api
 Page({
 
   /**
@@ -31,7 +32,7 @@ Page({
   onShow: function () {
     var that = this;
     wx.request({
-      url: 'http://localhost:8081/vx/getAddress',
+      url: api+'/vx/getAddress',
       method: 'GET',
       data: {
         openId:wx.getStorageSync("openId")
@@ -52,11 +53,6 @@ Page({
         })
       }
     })
-    module.exports = {
-      show: onShow
-
-    }
-
 
   },
 
@@ -103,7 +99,7 @@ Page({
     var index = e.currentTarget.dataset.index;
     var that = this;
     wx.request({
-      url: 'http://localhost:8081/vx/deleteAddress',
+      url: api+'/vx/deleteAddress',
       method: 'GET',
       data: {
         openId: wx.getStorageSync("openId"),

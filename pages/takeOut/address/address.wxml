@@ -2,7 +2,7 @@
 <view style="addressView">
 
  
-  <view class="addrssCard" wx:for="{{addressData[0]}}" wx:key="unique" data-index="{{index}}">
+  <view class="addrssCard" wx:for="{{addressData[0]}}" wx:key="unique" data-index="{{index}}" bindtap="selectAddress">
     <view class="house">
       <text>{{item.detail}}</text>
       <text class="text1">{{item.number}}</text>

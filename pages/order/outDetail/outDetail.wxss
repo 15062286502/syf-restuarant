@@ -1,0 +1,11 @@
+/* pages/order/outDetail/outDetail.wxss */
+@import "../detail/detail.wxss";
+.top{
+  display: flex;
+   flex-direction: column;
+   background:#FEF9F4;
+}
+.service{
+   display: flex;
+   flex-direction: row;
+}

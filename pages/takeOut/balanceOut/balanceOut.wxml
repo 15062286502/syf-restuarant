@@ -4,6 +4,20 @@
     <label class='top-left-label'>收货地址</label>
     <label class='top-right-label activity-color' bindtap="select">请选择地址</label>
   </view>
+
+  <view class="addrssCard">
+    <view class="house">
+      <text>{{addressData[0][index].detail}}</text>
+      <text class="text1">{{addressData[0][index].number}}</text>
+    </view>
+
+    <view class="person">
+      <text class="text4">{{addressData[0][index].person}}</text>
+      <text class="text2">{{addressData[0][index].sex}}</text>
+      <text class="text3">{{addressData[0][index].phone}}</text>
+    </view>
+  </view>
+  
   <!-- 订单详情 -->
   <view class='order-info'>
     <view class='order-info-title'>订单详情</view>
@@ -28,7 +42,7 @@
 <!-- 备注 -->
   <view class='note'>
     <label style='font-size:13px;color:#A3A3A3'>备注</label>
-    <textarea placeholder='默认常温，常规糖，如有口味要求，请输入备注' class='note-text' bindinput='remarks'></textarea>
+    <textarea placeholder='默认常温，常规糖，如有口味要求，请输入备注' class='note-text' bindinput='remark'></textarea>
   </view>
 <!-- 底部操作栏 -->
   <view class="operate-bar">

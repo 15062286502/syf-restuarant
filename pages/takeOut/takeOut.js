@@ -1,4 +1,6 @@
 // pages/list/list.js
+const app = getApp()
+const api = app.globalData.api
 Page({
 
   /**
@@ -41,7 +43,7 @@ Page({
       title: '努力加载中',
     })
     wx.request({
-      url: 'http://localhost:8081/vx/getAllList',
+      url: api+'/vx/getAllList',
       method: 'GET',
       data: {},
       header: {

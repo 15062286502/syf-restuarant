@@ -11,7 +11,10 @@
     "pages/myAddress/addAddress/addAddress",
     "pages/takeOut/takeOut",
     "pages/takeOut/balanceOut/balanceOut",
-    "pages/takeOut/address/address"
+    "pages/takeOut/address/address",
+    "pages/takeOut/takeOutDetail/takeOutDetail",
+     "pages/order/inDetail/inDetail",
+     "pages/order/outDetail/outDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -7,38 +7,42 @@
     </view>
   </view>
 
-<view wx:if="{{takeInList.length==0}}">
-  <view class='go-center' style=" margin-top:100px ">
-    <i class="iconfont icon-dingdan dindgan-i "></i>
-  </view>
-  <view class='go-center note-btn'>目前没有即时订单</view>
-  <view class='go-center' style='margin-top:20px'>
-    <view class='go-center down-center start-btn' bindtap='golist'>开始点餐</view>
-  </view>
+  <view wx:if="{{tabIndex==0&&takeInList.length==0||tabIndex==1 &&takeOutList.length==0}}">
+    <view class='go-center' style=" margin-top:100px ">
+      <i class="iconfont icon-dingdan dindgan-i "></i>
+    </view>
+    <view class='go-center note-btn'>目前没有即时订单</view>
+    <view class='go-center' style='margin-top:20px'>
+      <view class='go-center down-center start-btn' bindtap='golist'>开始点餐</view>
+    </view>
   </view>
 
-<view wx:if="{{tabIndex==0&&takeInList.length!=0}}" class='order-info' wx:for="{{takeInList}}" wx:key="unique">
-    
+  <view wx:if="{{tabIndex==0&&takeInList.length!=0||tabIndex==1 &&takeOutList.length!=0}}" class='order-info' wx:for="{{tabIndex==0?takeInList:takeOutList}}" wx:key="unique" data-index="{{index}}">
+
     <view class='order-info-title'>订单时间：{{item.orderTime}}</view>
-    <view class='cart-list-box' >
+    <view class='cart-list-box' bindtap="goDetail" data-index="{{index}}">
       <view class='list-info'>
         <view>{{item.orderName}}</view>
         <view class='list-info-size'>{{item.orderDesc}}</view>
-         <view class='list-image-box'>
+        <view class='list-image-box'>
           <image class="list-image" mode="widthFix" src='{{item.orderImg}}'></image>
         </view>
       </view>
       <view style='width:50%;padding:10px;'>
         <view style='float:right'>
-          <view style='color:#A3A3A3'>共 {{item.orderEntity.cupNumber}}件</view>
-          <view>¥ {{item.orderEntity.sumMoney}}.00</view>
-              <view class="state" style="color:{{item.orderEntity.state==0?'red':'green'}}">{{item.orderEntity.state==0?'制作中':'已完成'}}</view>
+          <view class="text2">
+            <view style='color:#A3A3A3'>共 {{item.orderEntity.cupNumber}}件</view>
+            <view>¥ {{item.orderEntity.sumMoney}}.00</view>
+          </view>
+          <view class="state" style="color:{{item.orderEntity.state==0?'red':'green'}}" wx:if="{{tabIndex==0}}">{{item.orderEntity.state==0?'制作中':'已完成'}}</view>
+          <view class="state" style="color:{{item.orderEntity.state==0?'red':'green'}}" wx:if="{{tabIndex==1}}">
+            <view class="btn_op2" bindtap='deleteAddress' wx:if="{{item.orderEntity.state==1}}">评价</view>
+            <view class="text1">{{item.orderEntity.state==0?'送餐中':'已完成'}}</view>
+          </view>
         </view>
       </view>
-       
+
     </view>
-  
-   
-</view>
+  </view>
 
 </view>

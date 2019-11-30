@@ -11,7 +11,7 @@
       </view>
       <view>
         <view class='go-top-10'>
-          <label class='number-card'>{{mealNumber}}</label>
+          <label class='number-card'>{{detail.orderEntity.mealNumber}}</label>
           <label class='statu-card'>制作中</label>
         </view>
         <view class='note-card'>
@@ -38,17 +38,17 @@
 
     <view class='order-sum'>
       <label>总计 </label>
-      <label class='order-sum-number activity-color'>¥ {{sumMonney-cutMonney}}</label>
+      <label class='order-sum-number activity-color'>¥ {{detail.orderEntity.sumMoney}}</label>
     </view>
   </view>
   <view class='order-info'>
     <!-- 动态请求 -->
     <view class='order-info-title'>订单信息</view>
     <view class='order-info-title flex-display' >订单号码
-      <view style='color:black;margin-left:10px'>{{identifier}}</view>
+      <view style='color:black;margin-left:10px'>{{detail.orderEntity.identifier}}</view>
     </view>
     <view class='order-info-title flex-display' >订单时间
-      <view class="order-info-li">{{time}}</view>
+      <view class="order-info-li">{{detail.orderTime}}</view>
     </view>
  <view class='order-info-title flex-display' >支付方式
       <view class="order-info-li">在线支付</view>

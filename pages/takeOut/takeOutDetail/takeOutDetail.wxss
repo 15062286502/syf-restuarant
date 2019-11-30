@@ -1,0 +1,2 @@
+/* pages/takeOut/takeOutDetail/takeOutDetail.wxss */
+ @import "../../order/detail/detail.wxss";

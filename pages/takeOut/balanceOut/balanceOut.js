@@ -1,11 +1,18 @@
 // pages/takeOut/balanceOut/balanceOut.js
+const app = getApp()
+const api = app.globalData.api
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    addressData: [],
+    index: 0,
+    cartList: [],
+    sumMonney: 0,
+    cupNumber: 0,
+    remarks: ''
   },
 
   /**
@@ -34,9 +41,68 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    wx.request({
+      url: api + '/vx/getAddress',
+      method: 'GET',
+      data: {
+        openId: wx.getStorageSync("openId")
+      },
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function (res) {
+        that.setData({
+          addressData: res.data
+        })
+        wx.setStorageSync("address", res.data)
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '服务器异常',
+          icon: 'none'
+        })
+      }
+    })
   },
 
+  gopay: function(){
+    var that =this;
+    wx.request({
+      url: api + '/vx/takeOutOrder',
+      method: 'GET',
+      data: {
+        openId: wx.getStorageSync("openId"),
+        'cartList': that.data.cartList,
+        'sumMoney': that.data.sumMonney,
+        'cupNumber': that.data.cupNumber,
+        'remarks': that.data.remarks,
+        'openId': that.data.openId,
+        'address': that.data.addressData[0][that.data.index]
+      },
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function (res) {
+        wx.redirectTo({
+          url: '../takeOutDetail/takeOutDetail?identifier=' + res.data.identifier + '&time=' + res.data.time + '&mealNumber=' + res.data.deliveryPerson
+        })
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '服务器异常',
+          icon: 'none'
+        })
+      }
+    })
+  },
+
+  remark: function (e) {
+    this.setData({
+      remarks: e.detail.value
+    })
+
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

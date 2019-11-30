@@ -34,7 +34,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    api: "http://localhost:8081"
   },
   setLoginState: function(e){
     wx.setStorageSync('openId', e);

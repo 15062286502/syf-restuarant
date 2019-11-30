@@ -1,4 +1,6 @@
 // pages/myAddress/addAddress/addAddress.js
+const app = getApp()
+const api = app.globalData.api
 Page({
 
   /**
@@ -74,7 +76,7 @@ Page({
       })
     }else{
       wx.request({
-        url: 'http://localhost:8081/vx/saveAddress',
+        url: api+'/vx/saveAddress',
         method: 'GET',
         data: {
           address: e.detail.value,

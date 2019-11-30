@@ -1,5 +1,6 @@
 // pages/mine/mine.js
 const app = getApp()
+const api = app.globalData.api
 Page({
 
   /**
@@ -65,7 +66,7 @@ Page({
             // 获取到用户的 openid
             app.setLoginState(res.data.openid)
             wx.request({
-              url: 'http://localhost:8081/vx/saveUser',
+              url: api+'/vx/saveUser',
               method: 'GET',
               data: {
                 vxName: this.data.nickName,

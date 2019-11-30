@@ -1,4 +1,6 @@
 // pages/order/balance/balance.js
+const app = getApp()
+const api = app.globalData.api
 Page({
 
   /**
@@ -33,7 +35,7 @@ Page({
     var that =this;
     
     wx.request({
-      url: 'http://localhost:8081/vx/getOrder',
+      url: api+'/vx/getOrder',
       method: 'GET',
       data: {
         'cartList': that.data.cartList,
@@ -47,9 +49,7 @@ Page({
         'Accept': 'application/json'
       },
       success: function (res) {
-        console.log(res.data)
-        console.log(that.data.openId);
-        wx.navigateTo({
+        wx.redirectTo({
           url: '../detail/detail?identifier=' + res.data.identifier + '&time=' + res.data.time +'&mealNumber=' + res.data.mealNumber
         })
       },
@@ -63,12 +63,13 @@ Page({
 
   
   },
-  remarks:function(e){
+  remark: function(e){
     this.setData({
       remarks: e.detail.value
     })
 
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
