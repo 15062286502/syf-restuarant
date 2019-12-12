@@ -103,6 +103,10 @@ Page({
         url: '../outDetail/outDetail'
       })
     }
-  }
-
+  },
+giveRemark:function(e){
+  wx.navigateTo({
+    url: '../../takeOut/remark/remark'
+  })
+}
 })

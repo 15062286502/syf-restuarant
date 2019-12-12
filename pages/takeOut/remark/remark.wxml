@@ -1,0 +1,31 @@
+<!--pages/takeOut/remark/remark.wxml-->
+<view class="remarkPage">
+  <view class="horseMan">
+    <view class="baseDesc">
+      <image class="horseManImg" src="http://localhost:8020/resource/user/xiaoniu.jpg"></image>
+      <view>
+        <view class="horseManDetail">
+          <text>侯道静</text>
+          <text class="logo">syf专送</text>
+          <text class="tail">已对骑手匿名</text>
+        </view>
+        <view class="time">
+          <text>40分钟送达</text>
+        </view>
+      </view>
+    </view>
+    <view class='left'>
+      <view bindtap="emoji" data-index="{{index}}" class="emoji" wx:for="{{userEmoji}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='right'>
+    <view bindtap="starTap" data-index="{{index}}" class="star" wx:for="{{userStars}}" wx:key="index">
+      <image src="{{item}}"></image>
+    </view>
+    <text class='rtxt'>{{wjxScore}}.0分</text>
+  </view>
+</view>

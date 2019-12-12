@@ -14,7 +14,8 @@
     "pages/takeOut/address/address",
     "pages/takeOut/takeOutDetail/takeOutDetail",
      "pages/order/inDetail/inDetail",
-     "pages/order/outDetail/outDetail"
+     "pages/order/outDetail/outDetail",
+     "pages/takeOut/remark/remark"
   ],
   "window": {
     "backgroundTextStyle": "light",

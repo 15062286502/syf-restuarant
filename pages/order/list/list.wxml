@@ -36,7 +36,7 @@
           </view>
           <view class="state" style="color:{{item.orderEntity.state==0?'red':'green'}}" wx:if="{{tabIndex==0}}">{{item.orderEntity.state==0?'制作中':'已完成'}}</view>
           <view class="state" style="color:{{item.orderEntity.state==0?'red':'green'}}" wx:if="{{tabIndex==1}}">
-            <view class="btn_op2" bindtap='deleteAddress' wx:if="{{item.orderEntity.state==1}}">评价</view>
+            <view class="btn_op2" catchtap='giveRemark' wx:if="{{item.orderEntity.state==1}}">评价</view>
             <view class="text1">{{item.orderEntity.state==0?'送餐中':'已完成'}}</view>
           </view>
         </view>
