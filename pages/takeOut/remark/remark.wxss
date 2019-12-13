@@ -33,53 +33,76 @@ page {
   display: flex;
   flex-direction: row;
 }
-.horseManDetail{
-   margin-top: 20rpx;
+
+.horseManDetail {
+  margin-top: 20rpx;
 }
-.time{
- margin-top: 28rpx;
- font-size: 12px;
+
+.time {
+  margin-top: 28rpx;
+  font-size: 12px;
 }
-.logo{
+
+.logo {
   margin-left: 50rpx;
   background: rgb(62, 162, 219);
   font-size: 12px;
 }
-.tail{
+
+.tail {
   margin-left: 170rpx;
-  color:#B1B1B1;
+  color: #b1b1b1;
 }
-.star  {
-  float: left;
-    width: 54rpx;
-   height: 100rpx;
-   text-align: center;
-   line-height: 100rpx;
-}
-  .star image{
-    width: 40rpx;
-  height: 40rpx;
-   margin-top: 30rpx;
-  }
-  .emoji image{
-    width: 100rpx;
+
+.star {
+  width: 54rpx;
   height: 100rpx;
-   margin-top: 80rpx;
-   margin-right: 80rpx;
-  }
-  .emoji{
-    width: 100%;
-  }
+  text-align: center;
+}
+
+.star image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 30rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}
+
+.emoji image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 80rpx;
+  margin-right: 80rpx;
+}
+
+.emoji {
+  width: 100%;
+  margin-left: 50rpx;
+  margin-top: 100rpx;
+}
+
 .score .right .rtxt {
-   display: inline-block;
-    height: 100rpx;
-    line-height: 100rpx;
-   margin-left: 15rpx;
-   color: #c00;
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 15rpx;
+  color: #c00;
   font-weight: bold;
- }
- .left{
-   display: flex;
-   flex-direction: row;
-   width: 100%;
- }
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.shopDetail {
+  margin-top: 50rpx;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  margin-left: 160rpx;
+  margin-top: 70rpx;
+}

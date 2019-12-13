@@ -19,13 +19,25 @@
         <image src="{{item}}"></image>
       </view>
     </view>
-
   </view>
 
-  <view class='right'>
-    <view bindtap="starTap" data-index="{{index}}" class="star" wx:for="{{userStars}}" wx:key="index">
-      <image src="{{item}}"></image>
+
+  <view class="horseMan">
+    <view class="baseDesc">
+      <image class="horseManImg" src="http://localhost:8020/resource/user/xiaoniu.jpg"></image>
+      <view class="shopDetail">
+
+        <text>syf家奶茶</text>
+
+      </view>
     </view>
-    <text class='rtxt'>{{wjxScore}}.0分</text>
+    <view class='right'>
+      <view bindtap="starTap" data-index="{{index}}" class="star" wx:for="{{userStars}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+     
+    </view>
+     <text class='rtxt'>{{wjxScore}}.0分</text>
   </view>
+
 </view>

@@ -12,7 +12,7 @@ Page({
       "../../../images/star.jpg",
       "../../../images/star.jpg",
     ],
-    userEmoji:[
+    userEmoji: [
       "../../../images/good.jpg",
       "../../../images/bad.jpg",
       "../../../images/normal.jpg",
@@ -43,11 +43,44 @@ Page({
     })
 
   },
+  emoji: function(e) {
+    var that = this;
+    var index = e.currentTarget.dataset.index;
+    var temp = this.data.userEmoji;
+    switch (index) {
+      case 0:
+        temp = ["../../../images/goodChecked.jpg",
+          "../../../images/bad.jpg",
+          "../../../images/normal.jpg",
+        ];
+        break;
+      case 1:
+        temp = [
+          "../../../images/good.jpg",
+          "../../../images/badChecked.jpg",
+          "../../../images/normal.jpg"
+        ];
+        break;
+      case 2:
+        temp = [
+          "../../../images/good.jpg",
+          "../../../images/bad.jpg",
+          "../../../images/normalChecked.jpg"
+        ];
+        break;
+    }
+    that.setData({
+      userEmoji: temp
+
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    wx.setNavigationBarTitle({
+      title: '订单评价'
+    })
   },
 
   /**
