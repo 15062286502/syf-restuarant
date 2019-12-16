@@ -9,3 +9,15 @@
    display: flex;
    flex-direction: row;
 }
+image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.star{
+  width: 50rpx;
+  height: 50rpx;
+}
+.shopRemark{
+  display: flex;
+  flex-direction: row;
+}

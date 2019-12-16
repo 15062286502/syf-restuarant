@@ -26,7 +26,7 @@ Page({
     if (index == 1) {
       var that = this;
       wx.request({
-        url: api + '/vx/getAllTakeOutOrder',
+        url: api + '/vx/takeInOrder',
         method: 'GET',
         data: {
           "openId": wx.getStorageSync('openId')
@@ -34,14 +34,13 @@ Page({
         header: {
           'Accept': 'application/json'
         },
-        success: function(res) {
-          
+        success: function (res) {
           that.setData({
-            takeOutList: res.data
+            takeInList: res.data
           })
-          
+
         },
-        fail: function(res) {
+        fail: function (res) {
           wx.showToast({
             title: '服务器异常',
             icon: 'none'
@@ -51,7 +50,7 @@ Page({
     }
   },
   golist: function() {
-    if (this.data.tabIndex == 0) {
+    if (this.data.tabIndex == 1) {
       wx.navigateTo({
         url: '../../list/list'
       })
@@ -66,7 +65,7 @@ Page({
   onShow: function() {
     var that = this;
     wx.request({
-      url: api + '/vx/takeInOrder',
+      url: api + '/vx/getAllTakeOutOrder',
       method: 'GET',
       data: {
         "openId": wx.getStorageSync('openId')
@@ -74,13 +73,14 @@ Page({
       header: {
         'Accept': 'application/json'
       },
-      success: function(res) {
+      success: function (res) {
+
         that.setData({
-          takeInList: res.data
+          takeOutList: res.data
         })
 
       },
-      fail: function(res) {
+      fail: function (res) {
         wx.showToast({
           title: '服务器异常',
           icon: 'none'
@@ -92,7 +92,7 @@ Page({
     var that =this
     var index = e.currentTarget.dataset.index;
     
-    if (this.data.tabIndex == 0) {
+    if (this.data.tabIndex == 1) {
       wx.setStorageSync("detail", this.data.takeInList[index])
       wx.navigateTo({
         url: '../inDetail/inDetail'
@@ -105,6 +105,8 @@ Page({
     }
   },
 giveRemark:function(e){
+  var index = e.currentTarget.dataset.index;
+  wx.setStorageSync("orderId", this.data.takeOutList[index].orderEntity.id)
   wx.navigateTo({
     url: '../../takeOut/remark/remark'
   })

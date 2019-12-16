@@ -17,6 +17,21 @@
       <view class="order-info-li">{{address.detail}}</view>
     </view>
   </view>
+ <!-- 评价 -->
+   <view class='order-info' wx:if="{{show}}">
+    <view class='order-info-title'>评价</view>
+    <view class='order-info-title flex-display'>骑手评分
+      <view class="order-info-li"><image src="{{emoji}}"></image></view>
+    </view>
+    <view class='order-info-title flex-display'>店铺评分
+      <view class="shopRemark" >  <view  wx:for="{{star}}" wx:key="index">
+        <image class="star" src="{{item}}"></image>
+      </view></view>
+    </view>
+    <view class='order-info-title flex-display'>文字评价
+      <view class="order-info-li">{{writtenWords}}</view>
+    </view>
+  </view>
   <!-- 订单详情 -->
   <view class='order-info'>
     <view class='order-info-title'>订单详情</view>

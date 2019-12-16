@@ -58,14 +58,13 @@ page {
   width: 54rpx;
   height: 100rpx;
   text-align: center;
+  margin-right: 50rpx;
 }
 
 .star image {
   width: 50rpx;
   height: 50rpx;
   margin-top: 30rpx;
-  margin-left: 50rpx;
-  margin-right: 50rpx;
 }
 
 .emoji image {
@@ -103,6 +102,24 @@ page {
 .right {
   display: flex;
   flex-direction: row;
-  margin-left: 160rpx;
-  margin-top: 70rpx;
+  margin-left: 120rpx;
+  margin-top: 0rpx;
 }
+.rtxt{
+  margin-left:290rpx;
+}
+.note-text{
+  width:95%;
+  font-size:12px;
+  background:#F2F2F2;
+  padding:10px;
+  height:80px;
+}
+button{
+  width: 100%;
+  margin-top: 80rpx;
+  background: orange;
+}
+
+
+

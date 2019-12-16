@@ -35,9 +35,10 @@
       <view bindtap="starTap" data-index="{{index}}" class="star" wx:for="{{userStars}}" wx:key="index">
         <image src="{{item}}"></image>
       </view>
-     
-    </view>
-     <text class='rtxt'>{{wjxScore}}.0分</text>
-  </view>
 
+    </view>
+    <text class='rtxt'>{{wjxScore}}.0分</text>
+    <textarea placeholder="在此写下对店铺的评价" class="note-text" bindinput="words"></textarea>
+  </view>
+<button disabled="{{check}}" bindtap="commit">提交评价</button>
 </view>
