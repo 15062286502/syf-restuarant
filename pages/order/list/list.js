@@ -106,7 +106,7 @@ Page({
   },
 giveRemark:function(e){
   var index = e.currentTarget.dataset.index;
-  wx.setStorageSync("orderId", this.data.takeOutList[index].orderEntity.id)
+  wx.setStorageSync("orderId", this.data.takeOutList[index].orderEntity)
   wx.navigateTo({
     url: '../../takeOut/remark/remark'
   })

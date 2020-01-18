@@ -25,7 +25,8 @@ Page({
     starCheck:false,
     emojiCheck:false,
     writtenWords:'',
-    orderId: wx.getStorageSync("orderId")
+    orderId: wx.getStorageSync("orderId").id,
+    personDetail: wx.getStorageSync("orderId").deliveryPerson
   },
   starTap: function(e) {
     var that = this;
@@ -108,7 +109,7 @@ Page({
       url: api + '/vx/updateRemark',
       method: 'GET',
       data: {
-        "orderId": wx.getStorageSync('orderId'),
+        "orderId": wx.getStorageSync('orderId').id,
         "startNum": this.data.starNum,
         "emojiNum": this.data.emojiNum,
         "writtenWords": this.data.writtenWords

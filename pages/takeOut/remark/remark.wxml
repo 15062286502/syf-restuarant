@@ -2,10 +2,10 @@
 <view class="remarkPage">
   <view class="horseMan">
     <view class="baseDesc">
-      <image class="horseManImg" src="http://localhost:8020/resource/user/xiaoniu.jpg"></image>
+      <image class="horseManImg" src="../../../images/person.jpg"></image>
       <view>
         <view class="horseManDetail">
-          <text>侯道静</text>
+          <text>{{personDetail}}</text>
           <text class="logo">syf专送</text>
           <text class="tail">已对骑手匿名</text>
         </view>
@@ -24,7 +24,7 @@
 
   <view class="horseMan">
     <view class="baseDesc">
-      <image class="horseManImg" src="http://localhost:8020/resource/user/xiaoniu.jpg"></image>
+      <image class="horseManImg" src="../../../images/top.jpg"></image>
       <view class="shopDetail">
 
         <text>syf家奶茶</text>
