@@ -95,7 +95,11 @@ Page({
     wx.navigateTo({
       url: '../myAddress/myAddress'
     })
+  },
+  imChat:function(){
+    wx.navigateTo({
+      url: '../imchat/imchat'
+    })
   }
-
 
 })

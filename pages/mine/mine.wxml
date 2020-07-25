@@ -14,13 +14,17 @@
 
 <view class='go-center card-box'>
   <view class='card-info'>
-      <view class='down-center' style='height:33%;border-bottom:1px solid #E3E3E3;' bindtap="getAddress">
+    <view class='down-center' style='height:33%;border-bottom:1px solid #E3E3E3;' bindtap="imChat">
+        <i class="iconfont icon-youhuiquan" style="color:#FF9C35"></i>
+        <label style='font-size:15px;margin-left:15px'>即时聊天</label>
+      </view>
+      <!-- <view class='down-center' style='height:33%;border-bottom:1px solid #E3E3E3;' bindtap="getAddress">
         <i class="iconfont icon-youhuiquan" style="color:#FF9C35"></i>
         <label style='font-size:15px;margin-left:15px'>我的地址</label>
-      </view>
+      </view> -->
       <view class='down-center' style='height:34%;border-bottom:1px solid #E3E3E3;'>
         <i class="iconfont icon-shouji" style="color:#B6D9A9"></i>
-        <label style='font-size:15px;margin-left:15px'>津贴：店内下单满20减3元</label>
+        <label style='font-size:15px;margin-left:15px'>设置</label>
       </view>
       <view class='down-center' style='height:33%'> 
         <i class="iconfont icon-shouji" style="color:#B6D9A9"></i>

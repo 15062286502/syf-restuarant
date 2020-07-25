@@ -1,0 +1,7 @@
+<!--pages/imchat/imchat.wxml-->
+<form  bindsubmit='formSubmit'>
+选择好友<input name="name"/>
+输入发送内容<input name="message"/>
+<button form-type='submit'>发送</button>
+</form>
+<text>收到消息：{{content}}</text>

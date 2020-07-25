@@ -13,14 +13,17 @@
     "pages/takeOut/balanceOut/balanceOut",
     "pages/takeOut/address/address",
     "pages/takeOut/takeOutDetail/takeOutDetail",
-     "pages/order/inDetail/inDetail",
-     "pages/order/outDetail/outDetail",
-     "pages/takeOut/remark/remark"
+    "pages/order/inDetail/inDetail",
+    "pages/order/outDetail/outDetail",
+    "pages/takeOut/remark/remark",
+    "pages/imchat/imchat",
+    "pages/mail/mail",
+    "pages/chat/chat"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FF9C35",
-    "navigationBarTitleText": "syf家奶茶",
+    "navigationBarTitleText": "im即时通讯",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -32,13 +35,13 @@
         "selectedIconPath": "images/home_s.png",
         "iconPath": "images/home.png",
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "消息"
       },
       {
         "selectedIconPath": "images/order_s.png",
         "iconPath": "images/order.png",
-        "pagePath": "pages/order/list/list",
-        "text": "订单"
+        "pagePath": "pages/mail/mail",
+        "text": "通讯录"
       },
       {
         "selectedIconPath": "images/mine_s.png",
