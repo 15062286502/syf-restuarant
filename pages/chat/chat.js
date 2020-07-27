@@ -55,6 +55,7 @@ Page({
     initData(this);
     this.setData({
       cusHeadIcon: app.globalData.userInfo.avatarUrl,
+      id: options.id
     });
   },
 
@@ -62,7 +63,39 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var msg = {};
+    msg.id= wx.getStorageSync('openId')
+    msg.cmd=21
+    var send = JSON.stringify(msg);
+   wx.sendSocketMessage({
+     data: send 
+   })
+   wx.onSocketMessage(message => {
+    //把JSONStr转为JSON
+    message = message.data.replace(" ", "");
+    if (typeof message != 'object') {
+      message = message.replace(/\ufeff/g, ""); //重点
+      var jj = JSON.parse(message);
+      message = jj;
+    }
+    console.log(message);
+    if(message.command === 11){
+      var msg = {
+        speaker: 'server',
+        contentType: 'text'
+      }
+      msg.content = message.data.content
+      
+      msgList.push(msg)
+      inputVal = '';
+      this.setData({
+        msgList,
+        inputVal
+      });
+      console.log(this.data.msgList)
+    }
+    
+  })
   },
 
   /**
@@ -122,10 +155,22 @@ Page({
       msgList,
       inputVal
     });
-
+   
+      //自定义的发给后台识别的参数
+         var msg = {};
+         msg.from= ""
+         msg.to = this.data.id
+         msg.cmd=11
+         msg.chatType = 2
+         msg.group_id = 100
+         msg.content = e.detail.value
+         var send = JSON.stringify(msg);
+        wx.sendSocketMessage({
+          data: send 
+        })
+      
 
   },
-
   /**
    * 退回上一页
    */

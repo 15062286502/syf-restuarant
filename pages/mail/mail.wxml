@@ -3,7 +3,7 @@
   <scroll-view class="content" enable-back-to-top scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true" bindscroll="onPageScroll"> 
     <view wx:for="{{listMain}}" wx:for-item="group" wx:key="{{group.id}}"  id="{{ 'inToView'+group.id}}" data-id='{{group.id}}'> 
       <view class="address_top" >{{group.region}}</view> 
-        <view wx:for="{{group.brands}}" wx:for-item="item" wx:key="{{item.brandId}}" bindtap="goChat"> 
+        <view wx:for="{{group.brands}}" wx:for-item="item" wx:key="{{item.brandId}}" data-value="{{item.id}}" bindtap="goChat"> 
           <view class="address_bottom" data-id='{{item.brandId}}'>{{item.name}}</view> 
         </view> 
     </view> 
