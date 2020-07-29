@@ -12,16 +12,7 @@ var keyHeight = 0;
 function initData(that) {
   inputVal = '';
 
-  msgList = [{
-      speaker: 'server',
-      contentType: 'text',
-      content: '欢迎来到英雄联盟，敌军还有30秒到达战场，请做好准备！'
-    },
-    {
-      speaker: 'customer',
-      contentType: 'text',
-      content: '我怕是走错片场了...'
-    }
+  msgList = [
   ]
   that.setData({
     msgList,
@@ -64,8 +55,9 @@ Page({
    */
   onShow: function() {
     var msg = {};
-    msg.id= wx.getStorageSync('openId')
-    msg.cmd=21
+    msg.from= wx.getStorageSync('openId')
+    msg.to = this.data.id
+    msg.cmd=23
     var send = JSON.stringify(msg);
    wx.sendSocketMessage({
      data: send 
@@ -78,7 +70,6 @@ Page({
       var jj = JSON.parse(message);
       message = jj;
     }
-    console.log(message);
     if(message.command === 11){
       var msg = {
         speaker: 'server',
@@ -92,9 +83,17 @@ Page({
         msgList,
         inputVal
       });
-      console.log(this.data.msgList)
+      this.blur()
     }
-    
+    if(message.command === 24){
+      msgList= message.data
+      inputVal = '';
+      this.setData({
+        msgList,
+        inputVal
+      });
+      this.blur()
+    }
   })
   },
 
@@ -158,11 +157,12 @@ Page({
    
       //自定义的发给后台识别的参数
          var msg = {};
-         msg.from= ""
+         msg.from= wx.getStorageSync('openId')
          msg.to = this.data.id
          msg.cmd=11
          msg.chatType = 2
          msg.group_id = 100
+         msg.msgType = 0
          msg.content = e.detail.value
          var send = JSON.stringify(msg);
         wx.sendSocketMessage({
